@@ -2,18 +2,18 @@
 
 {%extends 'blog/base.html'%}
 {%block content%}
-{%for blog in blog_post%}
+{%for post in posts%}
 <!--<h1>{{blog.title}}</h1>-->
 <!--<h1>{{blog.content}}</h1>-->
 <!--<h1>{{blog.auther}}</h1>-->
 <article class="media content-section">
   <div class="media-body">
     <div class="article-metadata">
-      <a class="mr-2" href="#">{{ blog.author }}</a>
-      <small class="text-muted">{{ blog.post_create_date }}</small>
+      <a class="mr-2" href="#">{{ post.author }}</a>
+      <small class="text-muted">{{ post.date_posted | date:'F d, Y'}}</small>
     </div>
-    <h2><a class="article-title" href="#">{{ blog.title }}</a></h2>
-    <p class="article-content">{{ blog.content }}</p>
+    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+    <p class="article-content">{{ post.content }}</p>
   </div>
 </article>
 
@@ -32,13 +32,6 @@
 
 {% endblock %}
 
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
 
 
 <!--{%for blog in blog_post%}-->
